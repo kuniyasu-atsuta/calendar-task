@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'users#index'
   get 'uis/material_icons'
   get 'uis/modals'
   get 'uis/notification'
@@ -20,7 +21,12 @@ Rails.application.routes.draw do
   get 'tables/responsive'
   get 'tables/tablesaw'
 
-  # resources :pages
+  get  '/signup',  to: 'users#new'
+  resources :users
+
+
+
+
   get 'pages/confirm_mail'
   get 'pages/lock_screen'
   get 'login', to: 'pages#login'

@@ -12,7 +12,17 @@ class PagesController < ApplicationController
   end
 
   def register
+    @user = User.new
   end
+
+  def create
+    @user = User.new(params[:user])
+    if @user.save
+    else
+      render 'register'
+    end
+  end
+
 
   def starter
   end
@@ -28,4 +38,10 @@ class PagesController < ApplicationController
 
   def typography
   end
+
+  private
+
+    def user_params
+      params.require(:user).permit(:name, :email, :password)
+    end
 end
