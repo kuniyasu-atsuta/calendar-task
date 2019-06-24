@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'users#index'
+  root 'pages#landing'
+  get 'home', to: 'users#index'
   get 'uis/material_icons'
   get 'uis/modals'
   get 'uis/notification'
@@ -21,6 +22,8 @@ Rails.application.routes.draw do
   get 'tables/responsive'
   get 'tables/tablesaw'
 
+  get '/ranking/:id', to: 'pages#ranking'
+  get '/help/:id', to: 'pages#help'
   get '/signup',  to: 'users#new'
   get '/login',   to: 'sessions#new'
   post '/login',   to: 'sessions#create'
@@ -28,7 +31,16 @@ Rails.application.routes.draw do
   resources :users
 
 
+  get 'users/index/:id', to: 'users#index'
 
+  get 'piano/:id', to: 'pages#piano'
+  get 'piano/:id/1', to: 'lessons#lesson1'
+  get 'piano/:id/2', to: 'lessons#lesson2'
+  get 'piano/:id/3', to: 'lessons#lesson3'
+  get 'piano/:id/4', to: 'lessons#lesson4'
+  get 'piano/:id/5', to: 'lessons#lesson5'
+  get 'piano/:id/6', to: 'lessons#lesson6'
+  get 'piano/:id/7', to: 'lessons#lesson7'
 
   get 'pages/confirm_mail'
   get 'pages/lock_screen'
@@ -38,6 +50,8 @@ Rails.application.routes.draw do
   get 'pages/recoverpw'
   get 'pages/starter', to: 'pages#starter'
   get 'calendar/:id', to: 'pages#calendar'
+  get 'profile/:id', to: 'extras#profile'
+  get 'setting/:id', to: 'users#setting'
   get 'pages/inbox'
   get 'forms/xeditable'
   get 'forms/wysiwig'

@@ -6,21 +6,12 @@
       <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
       <meta name="author" content="Coderthemes">
 
-      <!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
+      <%= favicon_link_tag('favicon.ico', rel: 'shortcut icon') %>
 
-    <title>Myapp</title>
-      <!--calendar css-->
-      <!-- <link href="assets/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" /> -->
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <title><%= yield(:title) %></title>
+      <%= yield(:css) %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-      <!-- App css -->
-      <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-      <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
-      <link href="assets/css/style.css" rel="stylesheet" type="text/css" /> -->
-
-      <!-- <script src="assets/js/modernizr.min.js"></script> -->
-
+      <%= yield(:js1) %>
   </head>
   <body class="fixed-left">
     <%= yield %>
@@ -28,5 +19,6 @@
       <div class="alert alert-<%= message_type %> w-50 mx-auto .mt-5"><%= message %></div>
     <% end %>
     <div class="w-50 mx-auto"><%= debug(params) if Rails.env.development? %></div>
+    <%= yield(:js2) %>
   </body>
 </html>

@@ -11,19 +11,7 @@
 // about supported directives.
 //
 //= require jquery3
-//= require jquery.knob
-//= require jquery-ui
-//= require jquery.validate
-//= require jquery.circliful.js
-//= require jquery.steps
-//= require popper
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require bootstrap
-//= require moment
-//= require daterangepicker
-//= require bootstrap-datetimepicker
-//= require jquery-datatables-editable/jquery.dataTables
-//= require jquery-datatables-editable/dataTables.bootstrap.js
-//= require_tree .

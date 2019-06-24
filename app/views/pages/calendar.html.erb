@@ -1,3 +1,9 @@
+<% provide(:title, "カレンダー") %>
+<% provide(:css, (stylesheet_link_tag 'plugins/fullcalendar/css/fullcalendar.min',
+                                      'bootstrap.min',
+                                      'icons',
+                                      'style.css')) %>
+<% provide(:js1, (javascript_include_tag 'modernizr.min')) %>
 <!-- Begin page -->
 <div id="wrapper">
   <%= render 'layouts/top_bar', locals: {title: "Calendar"} %>
@@ -130,32 +136,21 @@
     <!-- End Right content here -->
     <!-- ============================================================== -->
     <%= render 'layouts/right_bar' %>
-
-
 </div>
         <!-- END wrapper -->
-
-
-        <!-- jQuery  -->
-        <!-- <script src="assets/js/jquery.min.js"></script> -->
-        <!-- <script src="assets/js/popper.min.js"></script> -->
-        <!-- <script src="assets/js/bootstrap.min.js"></script> -->
-        <!-- <script src="assets/js/detect.js"></script> -->
-        <!-- <script src="assets/js/fastclick.js"></script> -->
-        <!-- <script src="assets/js/jquery.blockUI.js"></script> -->
-        <!-- <script src="assets/js/waves.js"></script> -->
-        <!-- <script src="assets/js/jquery.nicescroll.js"></script> -->
-        <!-- <script src="assets/js/jquery.slimscroll.js"></script> -->
-        <!-- <script src="assets/js/jquery.scrollTo.min.js"></script> -->
-
-        <!-- App js -->
-        <!-- <script src="assets/js/jquery.core.js"></script> -->
-        <!-- <script src="assets/js/jquery.app.js"></script> -->
-
-        <!-- Jquery-Ui -->
-        <!-- <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script> -->
-
-        <!-- SCRIPTS -->
-        <!-- <script src="assets/plugins/moment/moment.js"></script> -->
-        <!-- <script src='assets/plugins/fullcalendar/js/fullcalendar.min.js'></script> -->
-        <!-- <script src="assets/pages/jquery.fullcalendar.js"></script> -->
+<% provide(:js2, (javascript_include_tag 'jquery.min',
+                                         'popper.min',
+                                         'bootstrap.min',
+                                         'detect',
+                                         'fastclick',
+                                         'jquery.blockUI',
+                                         'waves',
+                                         'jquery.nicescroll',
+                                         'jquery.slimscroll',
+                                         'jquery.scrollTo.min',
+                                         'jquery.core',
+                                         'jquery.app',
+                                         'plugins/jquery-ui/jquery-ui.min',
+                                         'plugins/moment/moment',
+                                         'plugins/fullcalendar/js/fullcalendar.min',
+                                         'pages/jquery.fullcalendar')) %>

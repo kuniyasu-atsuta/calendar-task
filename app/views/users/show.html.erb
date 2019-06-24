@@ -1,8 +1,12 @@
-
+<% provide(:title, "ダッシューボード") %>
+<% provide(:css, (stylesheet_link_tag 'bootstrap.min',
+                                      'icons',
+                                      'style.css')) %>
+<% provide(:js1, (javascript_include_tag 'modernizr.min')) %>
 <!-- Begin page -->
 <div id="wrapper">
 
-    <%= render 'layouts/top_bar', locals: {title: "Dashboard"} %>
+    <%= render 'layouts/top_bar', locals: {title: "ダッシューボード"} %>
     <%= render 'layouts/left_sidebar' %>
     <!-- ============================================================== -->
     <!-- Start right Content here -->
@@ -11,11 +15,9 @@
         <!-- Start content -->
         <div class="content">
             <div class="container-fluid">
-
                 <div class="row">
-
                     <div class="col-xl-3 col-md-6">
-                		<div class="card-box">
+                		    <div class="card-box">
                             <div class="dropdown pull-right">
                                 <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
                                     <i class="mdi mdi-dots-vertical"></i>
@@ -32,7 +34,7 @@
                                 </div>
                             </div>
 
-                			<h4 class="header-title mt-0 m-b-30">Total Revenue</h4>
+                			      <h4 class="header-title mt-0 m-b-30">Total Revenue</h4>
 
                             <div class="widget-chart-1">
                                 <div class="widget-chart-box-1">
@@ -47,7 +49,7 @@
                                     <p class="text-muted m-b-10">Revenue today</p>
                                 </div>
                             </div>
-                		</div>
+                		    </div>
                     </div><!-- end col -->
 
                     <div class="col-xl-3 col-md-6">
@@ -469,25 +471,16 @@
                                             <td><span class="badge badge-primary">Coming soon</span></td>
                                             <td>Adminto admin</td>
                                         </tr>
-
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div><!-- end col -->
-
-                </div>
-                <!-- end row -->
-
+                </div><!-- end row -->
             </div> <!-- container -->
-
         </div> <!-- content -->
-
         <%= render 'layouts/footer' %>
-
     </div>
-
-
     <!-- ============================================================== -->
     <!-- End Right content here -->
     <!-- ============================================================== -->
@@ -496,32 +489,19 @@
 </div>
 <!-- END wrapper -->
 
-
-<!-- jQuery  -->
-<!-- <script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/detect.js"></script>
-<script src="assets/js/fastclick.js"></script>
-<script src="assets/js/jquery.blockUI.js"></script>
-<script src="assets/js/waves.js"></script>
-<script src="assets/js/jquery.nicescroll.js"></script>
-<script src="assets/js/jquery.slimscroll.js"></script>
-<script src="assets/js/jquery.scrollTo.min.js"></script>
-
-<!-- KNOB JS -->
-<!--[if IE]>
-<script type="text/javascript" src="assets/plugins/jquery-knob/excanvas.js"></script>
-<![endif]-->
-<!-- <script src="assets/plugins/jquery-knob/jquery.knob.js"></script> -->
-
-<!--Morris Chart-->
-<!-- <script src="assets/plugins/morris/morris.min.js"></script>
-<script src="assets/plugins/raphael/raphael-min.js"></script> -->
-
-<!-- Dashboard init -->
-<!-- <script src="assets/pages/jquery.dashboard.js"></script> -->
-
-<!-- App js -->
-<!-- <script src="assets/js/jquery.core.js"></script>
-<script src="assets/js/jquery.app.js"></script> -->
+<% provide(:js2, (javascript_include_tag 'jquery.min',
+                                         'popper.min',
+                                         'bootstrap.min',
+                                         'detect',
+                                         'fastclick',
+                                         'jquery.blockUI',
+                                         'waves',
+                                         'jquery.nicescroll',
+                                         'jquery.slimscroll',
+                                         'jquery.scrollTo.min',
+                                         'plugins/jquery-knob/jquery.knob',
+                                         'plugins/morris/morris.min',
+                                         'plugins/raphael/raphael-min',
+                                         'pages/jquery.dashboard',
+                                         'jquery.core',
+                                         'jquery.app')) %>

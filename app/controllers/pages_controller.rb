@@ -1,4 +1,8 @@
 class PagesController < ApplicationController
+
+  def landing
+  end
+
   def confirm_mail
   end
 
@@ -37,6 +41,9 @@ class PagesController < ApplicationController
   end
 
   def typography
+  end
+
+  def piano
   end
 
   private
