@@ -11,9 +11,9 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  */
 @import "bootstrap";
 @import "daterangepicker";
 @import "bootstrap-datetimepicker";
 @import "jquery-ui";
+@import "custom";

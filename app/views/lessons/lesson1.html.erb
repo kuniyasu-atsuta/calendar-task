@@ -1,0 +1,109 @@
+<% provide(:title, "piano") %>
+<% provide(:css, (stylesheet_link_tag 'bootstrap.min',
+                                      'piano',
+                                      'keys',
+                                      'icons',
+                                      'style')) %>
+<% provide(:js1, (javascript_include_tag 'vend/jquery-1.7.2.min',
+                                         'vend/jquery-ui-1.8.20.custom.min',
+                                         'modernizr.min')) %>
+
+<% keys = ['C3', 'Db3', 'D3', 'Eb3', 'E3', 'F3', 'Gb3', 'G3', 'Ab3', 'A3',
+         'Bb3', 'B3', 'C4', 'Db4', 'D4', 'Eb4', 'E4', 'F4', 'Gb4', 'G4',
+         'Ab4', 'A4', 'Bb4', 'B4', 'C5', 'Db5', 'D5', 'Eb5', 'E5', 'F5',
+         'Gb5', 'G5', 'Ab5', 'A5', 'Bb5', 'B5', 'C6'] %>
+
+<% for i in keys do %>
+ <%= audio_tag("samples/#{i}.mp3", id: "sound-#{i}", preload: "auto") %>
+<% end %>
+
+<div id="wrapper">
+
+  <%= render 'layouts/top_bar', locals: {title: "piano"} %>
+  <%= render 'layouts/left_sidebar' %>
+    <div class="content-page bg-light">
+         <!-- Start content -->
+      <div class="content">
+        <div class="row mx-2 mt-4">
+        <div class="container-fluid col-sm-4 col-md-4 col-xl-3 mt-5 shadow px-0 h-50 pb-0">
+          <div class="bg-custom pl-0">
+              <div class="ml-3 h-100">
+                <p class="">lesson1: </p>
+              </div>
+          </div>
+          <div class="ml-2 example">
+            <p class="ml-2 mr-2 mt-4" style="line-height: 30px;">本文</p>
+          </div>
+        </div>
+        <div class="container-fluid col-sm-8 col-md-8 col-xl-9 mt-5">
+          <div class="mt-2 mb-5">
+            <p>まず考えられるのが当たり前ですが、 バンドメンバーとのやり取りや、編曲家とのやり取りなど、歌メロをアカペラ音源としてやり取りする場面は必ず出てきます。その時に活躍してくれるのが様々な録音アプリです。 </p>
+          </div>
+
+          <%= render 'piano' %>
+          <%= render 'keys', locals: "lesson2" %>
+        </div>
+      </div>
+  </div>
+  <%= render 'layouts/right_bar' %>
+</div>
+<script>
+  var icons = document.querySelectorAll('icon')
+  var button = document.querySelectorAll('button')[0]
+
+  // button.addEventListener('click', switchTheme)
+
+  function switchTheme() {
+    var l = icons.length
+    while (l--) icons[l].classList.toggle('dark')
+  }
+
+  window.addEventListener('keydown', classy('add', 'keyboard-keydown'))
+  window.addEventListener('keyup', classy('remove', 'keyboard-keydown'))
+
+  function classy (method, className) {
+    return function (e) {
+      var els = getKeyEl(e)
+      while (els.length) els.pop().classList[method](className)
+    }
+  }
+
+  var keyMap = {
+    8: 'delete',
+    9: 'tab',
+    13: 'return',
+    16: 'shift',
+    17: 'ctrl',
+    18: 'alt, .keyboard-key.option',
+    27: 'esc',
+    32: 'space',
+    91: 'cmd',
+    37: 'left',
+    38: 'up',
+    39: 'right',
+    40: 'down'
+  }
+
+  function getKeyEl (e) {
+    var char = String.fromCharCode(e.which)
+    if (e.which >= 112 && e.which < 112 + 12) {
+      char = 'f' + (e.which - 111)
+    } else if (keyMap[e.which]) {
+      char = keyMap[e.which]
+    } else if (/\d/.test(char)) {
+      char = ['zero','one','two','three','four', 'five','six','seven','eight','nine'][Number(char)]
+    }
+    if (char) {
+      var charEl = document.querySelectorAll('.keyboard-key.' + char.toLowerCase())
+      if (charEl.length) return [].slice.call(charEl)
+    }
+  }
+</script>
+
+<% provide(:js2, (javascript_include_tag 'detect',
+                                         'fastclick',
+                                         'jquery.blockUI',
+                                         'waves',
+                                         'jquery.core',
+                                         'jquery.app',
+                                         'piano.js')) %>

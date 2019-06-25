@@ -1,0 +1,366 @@
+<% provide(:title, "レッスン") %>
+<% provide(:css, (stylesheet_link_tag 'bootstrap.min',
+                                      'icons',
+                                      'style.css')) %>
+<% provide(:js1, (javascript_include_tag 'modernizr.min')) %>
+  <!-- Begin page -->
+
+  <div id="wrapper">
+    <%= render 'layouts/top_bar', locals: {title: "レッスン"} %>
+    <%= render 'layouts/left_sidebar' %>
+
+
+              <!-- ============================================================== -->
+              <!-- Start right Content here -->
+              <!-- ============================================================== -->
+
+      <div class="content-page">
+          <!-- Start content -->
+          <div class="content ">
+              <div class="container">
+
+                  <div class="row">
+                      <div class="col-md-12 text-center mt-3">
+                          <h3 class="title mt-5">学べるコース一覧</h3>
+                          <p class="text-muted sub-title">気になるコースから始めてみよう</p>
+                      </div>
+                  </div> <!-- end row -->
+                  <div class="row">
+                    <div class="col-md-10 mx-auto my-5">
+                    <div class="row">
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <!-- Simple card -->
+                        <div class="card m-b-20">
+                          <%= link_to controller: "lessons", action: "lesson1", id: :link do %>
+                            <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                            <div class="card-body">
+                              <h4 class="card-title text-center">1章 メロディの作り方</h4>
+                              <p class="card-text text-center mb-3">基本的な音楽の仕組みを理解しよう</p>
+                              <a href="" class="btn btn-primary d-block">はじめる</a>
+                            </div>
+                          <% end %>
+                        </div>
+                      </div>
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                        <div class="card m-b-20">
+                          <%= link_to controller: "pages", action: "piano", id: :link do %>
+                            <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                            <div class="card-body">
+                              <h4 class="card-title text-center">2章 コードの進行</h4>
+                              <p class="card-text text-center mb-3">コードの繋がる仕組みを理解しよう</p>
+                              <a href="#" class="btn btn-primary d-block">はじめる</a>
+                            </div>
+                          <% end %>
+                        </div>
+                      </div>
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">3章 メロディーの構造</h4>
+                                  <p class="card-text text-center">メロディが繋がる仕組みを理解しよう</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">4章 マイナーキー</h4>
+                                  <p class="card-text text-center">マイナーキーの和音と旋律をマスターしよう</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">5章 楽曲の構造</h4>
+                                  <p class="card-text text-center">曲の雛形を理解し全体を設計できるようになろう</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">6章 転調の構造</h4>
+                                  <p class="card-text text-center">曲の雛形を理解し全体を設計できるようになろう</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">6章 ケルト系音楽</h4>
+                                  <p class="card-text text-center">ケルト系音楽を作るときのポイント</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">6章 アイドルソング</h4>
+                                  <p class="card-text text-center">明るく元気で華やかに描いてみよう</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-4 mb-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">6章 ロック系</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">6章 スクリーモ系</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">6章 メタル</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-4 mb-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">6章 ファンタジー系</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">6章 メタルコア</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">6章 V系</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-4 mb-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">6章 K-pop</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">6章 アニソンロック</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">6章 アニソン電波</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-4 mb-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">6章 Dubstep</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">6章 Future Bass</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">6章 ロキノン系</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-4 mb-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">シンセサイザー基礎</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">シンセサイザー応用</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">ベースラインの組み立て方</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-4 mb-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">バッキングギターの組み立て方</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">上物ギターの組み立て方</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">ドラムの組み立て方</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-4 mb-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">ポストハードコア</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                      <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                          <div class="card m-b-20">
+                              <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center">和風なメロディーの作り方</h4>
+                                  <p class="card-text text-center">Some quick example text to build on the card title and make
+                                      up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary d-block">はじめる</a>
+                              </div>
+                          </div>
+                      </div><!-- end col -->
+                    </div><!-- row -->
+                    </div>
+                  </div><!-- container -->
+                  <footer class="footer text-right">
+                      2016 - 2019 © Adminto. Coderthemes.com
+                  </footer>
+              </div><!-- content -->
+          </div><!-- end content -->
+              <!-- ============================================================== -->
+              <!-- End Right content here -->
+              <!-- ============================================================== -->
+      </div>
+  </div>
+<% provide(:js2, (javascript_include_tag 'jquery.min',
+                                         'popper.min',
+                                         'bootstrap.min',
+                                         'detect',
+                                         'fastclick',
+                                         'jquery.blockUI',
+                                         'waves',
+                                         'jquery.nicescroll',
+                                         'jquery.slimscroll',
+                                         'jquery.scrollTo.min',
+                                         'jquery.core',
+                                         'jquery.app')) %>
