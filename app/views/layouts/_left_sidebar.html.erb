@@ -11,21 +11,23 @@
                 <!-- <img src="assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme" class="rounded-circle img-thumbnail img-responsive"> -->
               </a>
               <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-
                   <!-- item-->
-                  <%= link_to(content_tag(:i, ' プロフィール', class: 'ti-lock m-r-5'), {controller: :extras, action: :profile}, id: :link, class: "dropdown-item notify-item") %>
-
+                  <%= link_to(content_tag(:i, ' プロフィール', class: 'ti-lock m-r-5'),
+                                         {controller: :extras, action: :profile},
+                                          id: :link,
+                                          class: "dropdown-item notify-item") %>
                   <!-- item-->
-                  <%= link_to(content_tag(:i, ' アカウント設定', class: 'ti-settings m-r-5'), {controller: :users, action: :setting}, id: :link, class: "dropdown-item notify-item") %>
-
+                  <%= link_to(content_tag(:i, ' アカウント設定', class: 'ti-settings m-r-5'),
+                                          edit_user_path(current_user),
+                                          class: "dropdown-item notify-item") %>
                   <!-- item-->
                   <a href="javascript:void(0);" class="dropdown-item notify-item">
                       <i class="ti-lock m-r-5"></i> Lock screen
                   </a>
-
                   <!-- item-->
-                  <%= link_to(content_tag(:i, ' ログアウト', class: 'ti-lock m-r-5'), logout_path, method: :delete, class: "dropdown-item notify-item") %>
-
+                  <%= link_to(content_tag(:i, ' ログアウト', class: 'ti-lock m-r-5'),
+                                          logout_path, method: :delete,
+                                          class: "dropdown-item notify-item") %>
               </div>
                 <div class="user-status offline"><i class="mdi mdi-adjust"></i></div>
             </div>
@@ -92,6 +94,13 @@
                     <i class="mdi mdi-calendar"></i>
                     <span class="badge badge-purple pull-right">New</span>
                     <span> 友達を探す </span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to logout_path, method: :delete do %>
+                    <i class="mdi mdi-calendar"></i>
+                    <span class="badge badge-purple pull-right">New</span>
+                    <span> ログアウト </span>
                   <% end %>
                 </li>
 

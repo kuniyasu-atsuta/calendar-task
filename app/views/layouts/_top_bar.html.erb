@@ -3,29 +3,29 @@
 
     <!-- ロゴ -->
     <div class="topbar-left">
-        <%= link_to "Pianist", user_path, class: 'logo' %>
-        <!-- <a href="index.html" class="logo"><span>ProPia<span>no</span></span><i class="mdi mdi-layers"></i></a> -->
+        <%= link_to user_path, class: 'logo' do %>
+          <span>Piani<span>st</span></span>
+          <i class="mdi mdi-layers"></i>
+        <% end %>
     </div>
     <!-- Button mobile view to collapse sidebar menu -->
     <div class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
 
             <!-- Page title -->
-            <ul class="nav navbar-nav list-inline navbar-left">
-                <li class="list-inline-item">
-                    <button class="button-menu-mobile open-left">
-                        <i class="mdi mdi-menu"></i>
-                    </button>
-                </li>
-                <li class="list-inline-item">
-                    <h4 class="page-title"><%= locals[:title] %></h4>
-                </li>
-            </ul>
+            <div class="d-flex">
+              <div class="list-inline-item">
+                <button class="button-menu-mobile open-left">
+                    <i class="mdi mdi-menu"></i>
+                </button>
+              </div>
+              <div>
+                <h4 class="page-title"><%= locals[:title] %></h4>
+              </div>
+            </div>
 
             <nav class="navbar-custom">
-
                 <ul class="list-unstyled topbar-right-menu float-right mb-0">
-
                     <li>
                         <!-- Notification -->
                         <div class="notification-box">
@@ -51,9 +51,9 @@
                             <button type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </li>
-
                 </ul>
             </nav>
+            <%= render 'shared/alert' %>
         </div><!-- end container -->
     </div><!-- end navbar -->
 </div>

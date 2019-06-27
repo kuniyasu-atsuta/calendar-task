@@ -11,12 +11,12 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += %w( css/bootstrap.min.css
-                                                  css/font-awesome.min.css
-                                                  css/owl.carousel.css
-                                                  css/owl.theme.css
-                                                  css/owl.transitions.css
-                                                  css/style.css
+Rails.application.config.assets.precompile += %w( landing/bootstrap.min.css
+                                                  landing/font-awesome.min.css
+                                                  landing/owl.carousel.css
+                                                  landing/owl.theme.css
+                                                  landing/owl.transitions.css
+                                                  landing/style.css
                                                   js/bootstrap.min.js
                                                   js/jquery.app.js
                                                   js/jquery.easing.1.3.min.js
@@ -27,6 +27,7 @@ Rails.application.config.assets.precompile += %w( css/bootstrap.min.css
                                                   js/popper.min.js
                                                   js/scrollspy.min.js
                                                   js/SmoothScroll.js
+                                                  js/owl-testi.js
 
                                                   bootstrap.min.css
                                                   charts.scss
@@ -73,6 +74,8 @@ Rails.application.config.assets.precompile += %w( css/bootstrap.min.css
                                                   plugins/fullcalendar/js/fullcalendar.min.js
                                                   plugins/bootstrap-wizard/jquery.bootstrap.wizard.js
                                                   plugins/jquery-validation/dist/jquery.validate.min.js
+                                                  plugins/custombox/dist/custombox.min.js
+                                                  plugins/custombox/dist/legacy.min.js
 
                                                   pages/jquery.chartist.init.js
                                                   pages/jquery.chartjs.init.js

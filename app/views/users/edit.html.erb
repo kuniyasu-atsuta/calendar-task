@@ -1,0 +1,189 @@
+<%= stylesheet_link_tag 'bootstrap.min',
+                        'icons',
+                        'style.css' %>
+<!-- Begin page -->
+<div id="wrapper">
+
+  <%= render 'layouts/top_bar', locals: {title: "アカウント設定"} %>
+  <%= render 'layouts/left_sidebar' %>
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <!-- PROGRESSBAR WIZARD -->
+                            <div class="col-xl-6 mx-auto">
+                                <div class="card-box pb-0">
+
+                                    <h4 class="header-title m-t-0 m-b-30">アカウント設定の変更</h4>
+
+                                    <div id="progressbarwizard" class="pull-in">
+                                        <ul class="nav nav-tabs nav-justified">
+                                            <li class="nav-item"><a href="#account-2" data-toggle="tab" class="nav-link">プロフィール</a></li>
+                                            <li class="nav-item"><a href="#finish-2" data-toggle="tab" class="nav-link">パスワード</a></li>
+                                        </ul>
+
+                                        <div class="tab-content b-0 mb-0">
+
+                                            <div id="bar" class="progress progress-striped progress-bar-primary-alt">
+                                                <div class="bar progress-bar progress-bar-primary"></div>
+                                            </div>
+                                                <div class="tab-pane p-t-10 fade" id="account-2">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                          <%= form_for(@user) do |f| %>
+                                                            <%= render 'shared/error_messages' %>
+                                                            <div class="form-group row clearfix">
+                                                                <label class="col-md-3 control-label " for="userName1">ユーザー名 *</label>
+                                                                <div class="col-md-9">
+                                                                    <%= f.text_field :name, class: "form-control required", id: "userName1"%>
+                                                                    <!-- <input class="form-control required" id="userName1" name="userName" type="text"> -->
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group row clearfix">
+                                                                <label class="col-md-3 control-label " for="email1">メールアドレス *</label>
+                                                                <div class="col-md-9">
+                                                                  <%= f.email_field :email, class: "required email form-control" %>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group row clearfix">
+                                                                <div class="col-lg-12">
+                                                                    <div class="checkbox checkbox-primary">
+                                                                        <input id="checkbox-h1" type="checkbox">
+                                                                        <label for="checkbox-h1">
+                                                                          Pianistからのお知らせを受け取る
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane p-t-10 fade" id="finish-2">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="form-group row clearfix">
+                                                                <label class="col-md-3 control-label " for="password1"> パスワード *</label>
+                                                                <div class="col-md-9">
+                                                                    <%= f.password_field :password, class: "form-control required" %>
+                                                                    <!-- <input id="password1" name="password" type="text" class="required form-control"> -->
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row clearfix">
+                                                                <label class="col-md-3 control-label " for="confirm1"> パスワード確認 *</label>
+                                                                <div class="col-md-9">
+                                                                    <%= f.password_field :password_confirmation, class: "required form-control", name: "Passwordをもう一度入力" %>
+                                                                    <!-- <input id="confirm1" name="confirm" type="text" class="required form-control"> -->
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-center m-t-40">
+                                                              <div class="col-xs-12">
+                                                                <%= f.submit "更新", class: "btn btn-custom btn-bordred btn-block" %>
+                                                              </div>
+                                                            </div>
+                                                          <% end %>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div data-turbolinks="false">
+                                                    <ul class="list-inline mb-0 wizard">
+                                                        <li class="previous list-inline-item first" style="display:none;"><a href="#">First</a>
+                                                        </li>
+                                                        <li class="previous list-inline-item"><a href="#account-2" class="btn btn-primary waves-effect waves-light">戻る</a></li>
+                                                        <li class="next last list-inline-item" style="display:none;"><a href="#">Last</a></li>
+                                                        <li class="next list-inline-item float-right"><a href="#finish-2" class="btn btn-primary waves-effect waves-light">進む</a></li>
+                                                    </ul>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+            </div>
+
+
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+
+      <%= render 'layouts/right_bar' %>
+
+    </div>
+        <!-- END wrapper -->
+  <%= javascript_include_tag 'jquery.min',
+                             'popper.min',
+                             'bootstrap.min',
+                             'detect',
+                             'fastclick',
+                             'jquery.blockUI',
+                             'waves',
+                             'jquery.nicescroll',
+                             'jquery.slimscroll',
+                             'jquery.scrollTo.min',
+                             'plugins/bootstrap-wizard/jquery.bootstrap.wizard',
+                             'plugins/jquery-validation/dist/jquery.validate.min',
+                             'jquery.core',
+                             'jquery.app' %>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#basicwizard').bootstrapWizard({'tabClass': 'nav nav-tabs navtab-wizard nav-justified'});
+
+                $('#progressbarwizard').bootstrapWizard({onTabShow: function(tab, navigation, index) {
+                    var $total = navigation.find('li').length;
+                    var $current = index+1;
+                    var $percent = ($current/$total) * 100;
+                    $('#progressbarwizard').find('.bar').css({width:$percent+'%'});
+                },
+                    'tabClass': 'nav nav-tabs navtab-wizard nav-justified'});
+
+                $('#btnwizard').bootstrapWizard({'tabClass': 'nav nav-tabs navtab-wizard nav-justified','nextSelector': '.button-next', 'previousSelector': '.button-previous', 'firstSelector': '.button-first', 'lastSelector': '.button-last'});
+
+                var $validator = $("#commentForm").validate({
+                    rules: {
+                        emailfield: {
+                            required: true,
+                            email: true,
+                            minlength: 3
+                        },
+                        namefield: {
+                            required: true,
+                            minlength: 3
+                        },
+                        urlfield: {
+                            required: true,
+                            minlength: 3,
+                            url: true
+                        }
+                    }
+                });
+
+                $('#rootwizard').bootstrapWizard({
+                    'tabClass': 'nav nav-tabs navtab-wizard nav-justified',
+                    'onNext': function (tab, navigation, index) {
+                        var $valid = $("#commentForm").valid();
+                        if (!$valid) {
+                            $validator.focusInvalid();
+                            return false;
+                        }
+                    }
+                });
+            });
+
+        </script>

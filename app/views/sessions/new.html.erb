@@ -8,10 +8,15 @@
 <div class="clearfix"></div>
 <div class="wrapper-page">
     <div class="text-center">
-        <a href="index.html" class="logo"><span>Pian<span>ist</span></span></a>
-        <h5 class="text-muted m-t-0 font-600">作曲とピアノの学習サービス</h5>
+      <%= link_to '/', class: 'logo' do %>
+        <span>Pian<span>ist</span></span>
+      <% end %>
+      <h5 class="text-muted m-t-0 font-600">作曲とピアノの学習サービス</h5>
     </div>
-	<div class="m-t-40 card-box">
+  	<div class="m-t-20">
+      <%= render 'shared/alert' %>
+    </div>
+	   <div class="m-t-40 card-box">
         <div class="text-center">
             <h4 class="text-uppercase font-bold m-b-0">ログイン</h4>
         </div>
@@ -21,7 +26,7 @@
 
                     <div class="form-group">
                         <div class="col-xs-12">
-                            <%= f.email_field :email, class: 'form-control', type: 'text',  placeholder: 'email' %>
+                            <%= f.email_field :email, class: 'form-control', type: 'text',  placeholder: 'メールアドレス' %>
                             <!-- <input class="form-control" type="text" required="" placeholder="Username"> -->
                         </div>
                     </div>
@@ -70,7 +75,11 @@
 
     <div class="row">
         <div class="col-sm-12 text-center">
-            <p class="text-muted">アカウントを持っていない方は <a href="page-register.html" class="text-primary m-l-5"><b>こちらで新規登録！</b></a></p>
+            <p class="text-muted">アカウントを持っていない方は
+              <%= link_to signup_path, class: 'text-primary m-l-5' do %>
+                <b>こちらで新規登録！</b>
+              <% end %>
+            </p>
         </div>
     </div>
 
