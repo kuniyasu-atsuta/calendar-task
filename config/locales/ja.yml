@@ -5,3 +5,10 @@ ja:
         name: 名前
         email: メールアドレス
         password: パスワード
+  views:
+    pagination:
+      first: "&laquo; <<"
+      last: ">> &raquo;"
+      previous: "&lsaquo; <"
+      next: "> &rsaquo;"
+      truncate: "..."

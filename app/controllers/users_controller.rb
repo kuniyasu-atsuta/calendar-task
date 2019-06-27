@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:edit, :update, :ranking]
   before_action :correct_user,   only: [:edit, :update]
+  
+  PER = 20
+
+  def ranking
+    @users = User.page(params[:page]).per(PER)
+  end
 
   def show
     if :id == nil

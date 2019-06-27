@@ -10,6 +10,7 @@
                 <%= image_tag('users/avatar-1.jpg', alt: "user-img", title: "Mat Helme", class: 'rounded-circle img-thumbnail img-responsive') %>
                 <!-- <img src="assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme" class="rounded-circle img-thumbnail img-responsive"> -->
               </a>
+              <% if logged_in? %>
               <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                   <!-- item-->
                   <%= link_to(content_tag(:i, ' プロフィール', class: 'ti-lock m-r-5'),
@@ -17,6 +18,7 @@
                                           id: :link,
                                           class: "dropdown-item notify-item") %>
                   <!-- item-->
+
                   <%= link_to(content_tag(:i, ' アカウント設定', class: 'ti-settings m-r-5'),
                                           edit_user_path(current_user),
                                           class: "dropdown-item notify-item") %>
@@ -26,9 +28,11 @@
                   </a>
                   <!-- item-->
                   <%= link_to(content_tag(:i, ' ログアウト', class: 'ti-lock m-r-5'),
-                                          logout_path, method: :delete,
+                                          {controller: :sessions, action: :destroy}, method: :delete,
                                           class: "dropdown-item notify-item") %>
+
               </div>
+              <% end %>
                 <div class="user-status offline"><i class="mdi mdi-adjust"></i></div>
             </div>
             <h5><a href="#">Mat Helme</a> </h5>
@@ -68,7 +72,7 @@
                 </li>
 
                 <li>
-                  <%= link_to({controller: :pages, action: :ranking}, id: :link, class: "dropdown-item notify-item") do %>
+                  <%= link_to({controller: :users, action: :ranking}, id: :link, class: "dropdown-item notify-item") do %>
                     <i class="mdi mdi-calendar"></i>
                     <span> ランキング </span>
                   <% end %>
@@ -96,6 +100,7 @@
                     <span> 友達を探す </span>
                   <% end %>
                 </li>
+              <% if logged_in? %>
                 <li>
                   <%= link_to logout_path, method: :delete do %>
                     <i class="mdi mdi-calendar"></i>
@@ -103,6 +108,7 @@
                     <span> ログアウト </span>
                   <% end %>
                 </li>
+              <% end %>
 
 
             </ul>

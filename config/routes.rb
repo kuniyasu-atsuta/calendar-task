@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root 'pages#landing'
   get 'home', to: 'users#index'
 
-  get '/ranking/:id', to: 'pages#ranking'
   get '/help/:id', to: 'pages#help'
   get '/signup',  to: 'users#new'
   get '/login',   to: 'sessions#new'
@@ -12,6 +11,7 @@ Rails.application.routes.draw do
 
 
   get 'users/index/:id', to: 'users#index'
+  get 'users/ranking/:id', to: 'users#ranking'
 
   get 'piano/:id', to: 'pages#piano'
   get 'piano/:id/1', to: 'lessons#lesson1'
