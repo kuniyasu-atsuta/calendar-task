@@ -6,12 +6,14 @@ RSpec.describe UserMailer, type: :mailer do
 
     it "renders the headers" do
       expect(mail.subject).to eq("Account activation")
-      expect(mail.to).to eq(["to@example.org"])
-      expect(mail.from).to eq(["from@example.com"])
+      expect(mail.to).to eq(["tester1@example.com"])
+      expect(mail.from).to eq(["noreply@example.com"])
     end
 
     it "renders the body" do
-      expect(mail.body.encoded).to match("Hi")
+      expect(mail.body.encoded).to match user.name
+      expect(mail.body.encoded).to match user.activation_token
+      expect(mail.body.encoded).to match CGI.escape(user.email)
     end
   end
 
