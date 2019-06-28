@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :users
-
+  resources :account_activations, only: [:edit]
 
   get 'users/index/:id', to: 'users#index'
   get 'users/ranking/:id', to: 'users#ranking'

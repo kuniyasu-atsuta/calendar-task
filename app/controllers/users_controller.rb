@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update, :ranking]
+  before_action :logged_in_user, only: [:edit, :update, :ranking, :destroy]
   before_action :correct_user,   only: [:edit, :update]
-  
+
   PER = 20
 
   def ranking
@@ -30,6 +30,12 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "アカウントを削除しました"
+    redirect_to root_url
   end
 
   def index
