@@ -1,7 +1,7 @@
-<h1>User#account_activation</h1>
+<h1>Pianist認証メール</h1>
 
 <p>
-  <%= @user.name %>, find me in app/views/user_mailer/account_activation.html.erb
+こんにちは  <%= @user.name %>, 下のurlをクリックして下さい
 </p>
 
 <%= link_to "Activate", edit_account_activation_url(@user.activation_token,

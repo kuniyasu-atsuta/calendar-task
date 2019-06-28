@@ -5,7 +5,7 @@ class AccountActivationsController < ApplicationController
       user.update_attribute(:activated,    true)
       user.update_attribute(:activated_at, Time.zone.now)
       log_in user
-      flash[:success] = "アカウントを作成しました"
+      flash[:success] = "認証に成功しました"
       redirect_to user
     else
       flash[:danger] = "認証に失敗しました"

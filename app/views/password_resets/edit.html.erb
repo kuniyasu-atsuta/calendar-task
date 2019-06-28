@@ -1,0 +1,67 @@
+<% provide(:title, "新規登録") %>
+<% provide(:css, (stylesheet_link_tag 'bootstrap.min',
+                                      'icons',
+                                      'style.css')) %>
+<% provide(:js1, (javascript_include_tag 'modernizr.min')) %>
+
+<div class="account-pages"></div>
+<div class="clearfix"></div>
+<div class="wrapper-page">
+  <div class="text-center">
+    <%= link_to '/', class: 'logo' do %>
+      <span>Pian<span>ist</span></span>
+    <% end %>
+    <h5 class="text-muted m-t-0 font-600">作曲とピアノの学習サービス</h5>
+  </div>
+  <div class="m-t-20">
+    <%= render 'shared/error_messages' %>
+  </div>
+  <div class="m-t-40 card-box">
+    <div class="text-center">
+      <h4 class="text-uppercase font-bold m-b-0">パスワード再設定</h4>
+    </div>
+    <div class="p-20">
+      <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+        <form class="form-horizontal m-t-20">
+
+          <%= hidden_field_tag :email, @user.email %>
+
+					<div class="form-group">
+						<div class="col-xs-12">
+              <%= f.password_field :password, class: "form-control", placeholder:"新しいパスワード" %>
+								<!-- <input class="form-control" type="password" required="" placeholder="Password"> -->
+						</div>
+					</div>
+
+          <div class="form-group">
+            <div class="col-xs-12">
+              <%= f.password_field :password_confirmation, class: "form-control", placeholder:"パスワード確認" %>
+                <!-- <input class="form-control" type="password" required="" placeholder="Password"> -->
+            </div>
+          </div>
+
+					<div class="form-group text-center m-t-40">
+						<div class="col-xs-12">
+              <%= f.submit "パスワードを更新する", class: "btn btn-custom btn-bordred btn-block" %>
+							<!-- <button class="btn btn-custom btn-bordred btn-block waves-effect waves-light" type="submit">
+								Register
+							</button> -->
+            </div>
+          </div>
+				</form>
+      <% end %>
+    </div>
+  </div>
+          <!-- end card-box -->
+<% provide(:js2, (javascript_include_tag 'jquery.min',
+                                         'popper.min',
+                                         'bootstrap.min',
+                                         'detect',
+                                         'fastclick',
+                                         'jquery.blockUI',
+                                         'waves',
+                                         'jquery.nicescroll',
+                                         'jquery.slimscroll',
+                                         'jquery.scrollTo.min',
+                                         'jquery.core',
+                                         'jquery.app')) %>
