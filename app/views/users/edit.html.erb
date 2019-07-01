@@ -1,6 +1,8 @@
+<% provide(:title, "アカウント設定") %>
 <%= stylesheet_link_tag 'bootstrap.min',
                         'icons',
                         'style.css' %>
+<% provide(:js1, (javascript_include_tag 'modernizr.min')) %>
 <!-- Begin page -->
 <div id="wrapper">
 
@@ -38,16 +40,15 @@
                                                         <div class="col-12">
                                                           <%= form_for(@user) do |f| %>
                                                             <%= render 'shared/error_messages' %>
-                                                            <div class="form-group row clearfix">
-                                                                <label class="col-md-3 control-label " for="userName1">ユーザー名 *</label>
+                                                            <div class="row clearfix">
+                                                                <%= f.label :name, 'ユーザー名 *', class: "col-md-3 control-label" %>
                                                                 <div class="col-md-9">
-                                                                    <%= f.text_field :name, class: "form-control required", id: "userName1"%>
-                                                                    <!-- <input class="form-control required" id="userName1" name="userName" type="text"> -->
+                                                                    <%= f.text_field :name, class: "form-control required" %>
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-group row clearfix">
-                                                                <label class="col-md-3 control-label " for="email1">メールアドレス *</label>
+                                                                <%= f.label :email, 'メールアドレス *', class: "col-md-3 control-label" %>
                                                                 <div class="col-md-9">
                                                                   <%= f.email_field :email, class: "required email form-control" %>
                                                                 </div>
@@ -70,17 +71,15 @@
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <div class="form-group row clearfix">
-                                                                <label class="col-md-3 control-label " for="password1"> パスワード *</label>
+                                                                <%= f.label :password, 'パスワード *', class: "col-md-3 control-label" %>
                                                                 <div class="col-md-9">
                                                                     <%= f.password_field :password, class: "form-control required" %>
-                                                                    <!-- <input id="password1" name="password" type="text" class="required form-control"> -->
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row clearfix">
-                                                                <label class="col-md-3 control-label " for="confirm1"> パスワード確認 *</label>
+                                                                <%= f.label :password_confirmation, 'パスワード確認 *', class: "col-md-3 control-label" %>
                                                                 <div class="col-md-9">
-                                                                    <%= f.password_field :password_confirmation, class: "required form-control", name: "Passwordをもう一度入力" %>
-                                                                    <!-- <input id="confirm1" name="confirm" type="text" class="required form-control"> -->
+                                                                    <%= f.password_field :password_confirmation, class: "required form-control" %>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group text-center m-t-40">

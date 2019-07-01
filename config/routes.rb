@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'password_resets/new'
   get 'password_resets/edit'
   root 'pages#landing'
-  get 'home', to: 'users#index'
+  # get 'home', to: 'users#index'
 
   get '/help/:id', to: 'pages#help'
   get '/signup',  to: 'users#new'
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
 
-  get 'users/index/:id', to: 'users#index'
+  # get 'users/index/:id', to: 'users#index'
   get 'users/ranking/:id', to: 'users#ranking'
 
   get 'piano/:id', to: 'pages#piano'

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update, :ranking, :destroy]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :logged_in_user, only: [:show, :edit, :update, :ranking, :destroy]
+  before_action :correct_user,   only: [:show, :edit, :update]
 
   PER = 20
 
@@ -9,11 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if :id == nil
-      @user = User.find(params[:id])
-    else
-      @user = current_user
-    end
+    @user = User.find(params[:id])
   end
 
   def new

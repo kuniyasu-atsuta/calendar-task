@@ -48,6 +48,7 @@ before_action :check_expiration, only: [:edit, :update]
     def valid_user
       unless (@user && @user.activated? &&
               @user.authenticated?(:reset, params[:id]))
+        flash[:danger] = "正しいユーザーではありません"
         redirect_to root_url
       end
     end
