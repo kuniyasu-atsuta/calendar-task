@@ -5,7 +5,7 @@ class ChartsController < ApplicationController
   def index
   end
 
-  def chart_chartist
+  def chart_chartis
   end
 
   def chart_chartjs

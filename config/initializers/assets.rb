@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Be sure to restart your server when you modify this file.
 
 # Version of your assets, change this if you want to expire all your assets.
@@ -64,6 +66,7 @@ Rails.application.config.assets.precompile += %w( landing/bootstrap.min.css
                                                   wow.min.js
 
                                                   plugins/fullcalendar/css/fullcalendar.min.css
+                                                  plugins/morris/morris.css
 
                                                   plugins/jquery-knob/jquery.knob.js
                                                   plugins/jquery-knob/excanvas.js
@@ -99,5 +102,4 @@ Rails.application.config.assets.precompile += %w( landing/bootstrap.min.css
                                                   piano.js
                                                   vend/jquery-1.7.2.min.js
                                                   vend/jquery-ui-1.8.20.custom.min.js
-                                                  keys.css
-                                                )
+                                                  keys.css)

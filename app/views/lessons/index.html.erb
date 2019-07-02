@@ -31,7 +31,7 @@
                       <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
                           <!-- Simple card -->
                         <div class="card m-b-20">
-                          <%= link_to controller: "lessons", action: "lesson1", id: :link do %>
+                          <%= link_to "/lessons/#{@user.id}/1" do %>
                             <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
                             <div class="card-body">
                               <h4 class="card-title text-center">1章 メロディの作り方</h4>
@@ -43,7 +43,7 @@
                       </div>
                       <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
                         <div class="card m-b-20">
-                          <%= link_to controller: "pages", action: "piano", id: :link do %>
+                          <%= link_to "/lessons/#{@user.id}/2" do %>
                             <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
                             <div class="card-body">
                               <h4 class="card-title text-center">2章 コードの進行</h4>
@@ -54,7 +54,7 @@
                         </div>
                       </div>
                       <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
-
+                        <%= link_to "/lessons/#{@user.id}/3" do %>
                           <div class="card m-b-20">
                               <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
                               <div class="card-body">
@@ -63,9 +63,10 @@
                                   <a href="#" class="btn btn-primary d-block">はじめる</a>
                               </div>
                           </div>
-
+                        <% end %> 
                       </div><!-- end col -->
                       <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                        <%= link_to "/lessons/#{@user.id}/4" do %>
                           <div class="card m-b-20">
                               <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
                               <div class="card-body">
@@ -74,8 +75,10 @@
                                   <a href="#" class="btn btn-primary d-block">はじめる</a>
                               </div>
                           </div>
+                        <% end %>
                       </div><!-- end col -->
                       <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                        <%= link_to "/lessons/#{@user.id}/5" do %>
                           <div class="card m-b-20">
                               <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
                               <div class="card-body">
@@ -84,8 +87,10 @@
                                   <a href="#" class="btn btn-primary d-block">はじめる</a>
                               </div>
                           </div>
+                        <% end %>
                       </div><!-- end col -->
                       <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                        <%= link_to "/lessons/#{@user.id}/6" do %>
                           <div class="card m-b-20">
                               <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
                               <div class="card-body">
@@ -94,8 +99,10 @@
                                   <a href="#" class="btn btn-primary d-block">はじめる</a>
                               </div>
                           </div>
+                        <% end %>
                       </div><!-- end col -->
                       <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
+                        <%= link_to "/lessons/#{@user.id}/7" do %>
                           <div class="card m-b-20">
                               <%= image_tag 'gallery/1.jpg', class: 'card-img-top img-fluid', alt: 'Card image cap' %>
                               <div class="card-body">
@@ -104,6 +111,7 @@
                                   <a href="#" class="btn btn-primary d-block">はじめる</a>
                               </div>
                           </div>
+                        <% end %>
                       </div><!-- end col -->
                       <div class="col-md-12 col-lg-6 col-xl-4 mb-3 px-3">
                           <div class="card m-b-20">
@@ -364,4 +372,5 @@
                                          'jquery.slimscroll',
                                          'jquery.scrollTo.min',
                                          'jquery.core',
-                                         'jquery.app')) %>
+                                         'jquery.app',
+                                         'plugins/raphael/raphael-min')) %>

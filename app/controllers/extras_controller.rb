@@ -39,6 +39,7 @@ class ExtrasController < ApplicationController
   end
 
   def profile
+    @user = User.find(current_user.id)
   end
 
   def pricing

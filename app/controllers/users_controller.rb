@@ -1,11 +1,14 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:show, :edit, :update, :ranking, :destroy]
-  before_action :correct_user,   only: [:show, :edit, :update]
+  before_action :logged_in_user, only: %i[show edit  update ranking destroy]
+  before_action :correct_user,   only: %i[show edit update]
 
   PER = 20
 
   def ranking
     @users = User.page(params[:page]).per(PER)
+    @user = User.find(current_user.id)
   end
 
   def show
@@ -20,7 +23,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
-      flash[:success] = "認証用メールを送りました"
+      flash[:success] = '認証用メールを送りました'
       redirect_to root_url
     else
       render 'new'
@@ -29,19 +32,15 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "アカウントを削除しました"
+    flash[:success] = 'アカウントを削除しました'
     redirect_to root_url
   end
 
-  def index
-  end
-
-  def edit
-  end
+  def edit; end
 
   def update
-    if @user.update_attributes(user_params)
-      flash[:success] = "アカウントを設定を更新しました！"
+    if @user.update(user_params)
+      flash[:success] = 'アカウントを設定を更新しました！'
       redirect_to @user
     else
       render 'edit'
@@ -50,21 +49,21 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
-    end
+  def user_params
+    params.require(:user).permit(:name, :email, :password,
+                                 :password_confirmation)
+  end
 
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "ログインして下さい"
-        redirect_to login_url
-      end
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = 'ログインして下さい'
+      redirect_to login_url
     end
+  end
 
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
-    end
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
+  end
 end

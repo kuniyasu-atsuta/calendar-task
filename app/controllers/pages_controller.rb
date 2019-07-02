@@ -38,12 +38,17 @@ class PagesController < ApplicationController
   end
 
   def calendar
+    @user = User.find(current_user.id)
   end
 
   def typography
   end
 
   def piano
+  end
+
+  def help
+    @user = User.find(current_user.id)
   end
 
   private

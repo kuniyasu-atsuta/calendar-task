@@ -14,8 +14,7 @@
               <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                   <!-- item-->
                   <%= link_to(content_tag(:i, ' プロフィール', class: 'ti-lock m-r-5'),
-                                         {controller: :extras, action: :profile},
-                                          id: :link,
+                                          "/profile/#{@user.id}",
                                           class: "dropdown-item notify-item") %>
                   <!-- item-->
 
@@ -28,7 +27,7 @@
                   </a>
                   <!-- item-->
                   <%= link_to(content_tag(:i, ' ログアウト', class: 'ti-lock m-r-5'),
-                                          {controller: :sessions, action: :destroy}, method: :delete,
+                                          logout_path, method: :delete,
                                           class: "dropdown-item notify-item") %>
 
               </div>
@@ -58,35 +57,35 @@
               <li class="text-muted menu-title">Navigation</li>
 
                 <li>
-                  <%= link_to({controller: :users, action: :show}, id: :link, class: "dropdown-item notify-item") do %>
+                  <%= link_to user_path(@user), class: "dropdown-item notify-item" do %>
                     <i class="mdi mdi-view-dashboard"></i>
                     <span> ダッシュボード </span>
                   <% end %>
                 </li>
 
                 <li>
-                  <%= link_to({controller: :users, action: :index}, id: :link, class: "dropdown-item notify-item") do %>
+                  <%= link_to "/lessons/#{@user.id}", class: "dropdown-item notify-item" do %>
                     <i class="mdi mdi-calendar"></i>
                     <span> レッスン </span>
                   <% end %>
                 </li>
 
                 <li>
-                  <%= link_to({controller: :users, action: :ranking}, id: :link, class: "dropdown-item notify-item") do %>
+                  <%= link_to "/ranking/#{@user.id}", class: "dropdown-item notify-item" do %>
                     <i class="mdi mdi-calendar"></i>
                     <span> ランキング </span>
                   <% end %>
                 </li>
 
                 <li>
-                  <%= link_to({controller: :pages, action: :help}, id: :link, class: "dropdown-item notify-item") do %>
+                  <%= link_to '/help', class: "dropdown-item notify-item" do %>
                     <i class="mdi mdi-calendar"></i>
                     <span> ヘルプ </span>
                   <% end %>
                 </li>
 
                 <li>
-                  <%= link_to({controller: :pages, action: :calendar}, id: :link, class: "dropdown-item notify-item") do %>
+                  <%= link_to "/calendar/#{@user.id}", class: "dropdown-item notify-item" do %>
                     <i class="mdi mdi-calendar"></i>
                     <span class="badge badge-purple pull-right">New</span>
                     <span> カレンダー </span>
@@ -94,7 +93,7 @@
                 </li>
 
                 <li>
-                  <%= link_to({controller: :pages, action: :calendar}, id: :link, class: "dropdown-item notify-item") do %>
+                  <%= link_to "/calendar/#{@user.id}", class: "dropdown-item notify-item" do %>
                     <i class="mdi mdi-calendar"></i>
                     <span class="badge badge-purple pull-right">New</span>
                     <span> 友達を探す </span>
@@ -116,8 +115,6 @@
         </div>
         <!-- Sidebar -->
         <div class="clearfix"></div>
-
     </div>
-
 </div>
 <!-- Left Sidebar End -->
