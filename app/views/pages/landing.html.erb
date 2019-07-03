@@ -8,434 +8,441 @@
                                       'landing/style')) %>
 
 <% provide(:js1, (javascript_include_tag 'modernizr.min')) %>
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
-        <!-- [if lt IE 9]>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+<!-- [if lt IE 9]>
           <script src="js/html5shiv.js"></script>
           <script src="js/respond.min.js"></script>
         <![endif] -->
-    <!-- </head>-->
-    <body data-spy="scroll" data-target="#navbar-menu">
-        <!-- Navbar -->
-        <div class="navbar navbar-custom navbar-expand-md sticky fixed-top" role="navigation" id="sticky-nav">
-            <div class="container">
-                <!-- LOGO -->
-                <%= link_to '/', class: 'navbar-brand logo' do %>
-                    <%= image_tag('logo.png', alt: 'logo', height: '24') %>
-                <% end %>
+<!-- </head>-->
 
-                <!-- Responsive menu button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="fa fa-bars"></span>
-                </button>
+<body data-spy="scroll" data-target="#navbar-menu">
+  <!-- Navbar -->
+  <div class="navbar navbar-custom navbar-expand-md sticky fixed-top"
+       role="navigation" id="sticky-nav">
+    <div class="container">
+      <!-- LOGO -->
+      <%= link_to '/', class: 'navbar-brand logo' do %>
+      <%= image_tag('logo.png', alt: 'logo', height: '24') %>
+      <% end %>
+
+      <!-- Responsive menu button -->
+      <button class="navbar-toggler"
+              type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span>
+      </button>
 
 
-                <!-- menu -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- menu -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                    <!-- Navbar right -->
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a href="#home" class="nav-link">ホーム</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#features" class="nav-link">サービス詳細</a>
-                        </li>
-                    </ul>
-                    <%= link_to 'ログイン', login_path, class: 'nav-link navbar-login' %>
-                    <%= link_to '無料会員登録', signup_path, class: 'btn btn-white-bordered navbar-btn nav-item' %>
-                </div>
-                <!--/Menu -->
+        <!-- Navbar right -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a href="#home" class="nav-link">ホーム</a>
+          </li>
+          <li class="nav-item">
+            <a href="#features" class="nav-link">サービス詳細</a>
+          </li>
+        </ul>
+        <%= link_to 'ログイン', login_path, class: 'nav-link navbar-login' %>
+        <%= link_to '無料会員登録', signup_path,
+            class: 'btn btn-white-bordered navbar-btn nav-item' %>
+      </div>
+      <!--/Menu -->
+    </div>
+    <!-- end container -->
+  </div>
+  <!-- End navbar-custom -->
+
+  <!-- HOME -->
+  <section class="home bg-img-1" id="home">
+    <div class="bg-overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="home-fullscreen">
+            <div class="full-screen">
+              <div class="home-wrapper home-wrapper-alt">
+                <%= render 'shared/alert' %>
+                <h1 class="text-white">Progateだから楽しめる初心者からできるプログラミング学習</h1>
+                <h4 class="text-white">プログラミングは素晴らしい力です。
+                  やらないのはもったいない。悩んでいるなら、Progateでやってみよう。
+                  無料で始められる、初心者向け学習サイト。</h4>
+
+                <p class="text-white">Yes, I'm a dummy text. Anyway I look nice and useful</p>
+
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <a href="" title="Microsoft">
+                      <%= image_tag('clients/microsoft_white.png', alt: 'clients') %>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="" title="Google">
+                      <%= image_tag('clients/google_white.png', alt: 'clients') %>
+                    </a>
+                  </li>
+                </ul>
+
+                <a href="" class="btn btn-custom m-t-20">無料会員登録</a>
+              </div>
             </div>
-            <!-- end container -->
+          </div>
         </div>
-        <!-- End navbar-custom -->
+      </div>
+    </div>
+  </section>
+  <!-- END HOME -->
 
-        <!-- HOME -->
-        <section class="home bg-img-1" id="home">
-            <div class="bg-overlay"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="home-fullscreen">
-                            <div class="full-screen">
-                                <div class="home-wrapper home-wrapper-alt">
-                                  <%= render 'shared/alert' %>
-                                    <h1 class="text-white">Progateだから楽しめる初心者からできるプログラミング学習</h1>
-                                    <h4 class="text-white">プログラミングは素晴らしい力です。
-                                                            やらないのはもったいない。悩んでいるなら、Progateでやってみよう。
-                                                            無料で始められる、初心者向け学習サイト。</h4>
+  <!-- Features -->
+  <section class="section" id="features">
+    <div class="container">
 
-                                    <p class="text-white">Yes, I'm a dummy text. Anyway I look nice and useful</p>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="text-muted text-uppercase"><b>オンラインプログラミング学習サービス</b></p>
+          <h3 class="title">『Progate』</h3>
+          <p class="text-muted sub-title">Progateはオンラインでプログラミングが学べるサービスです。<br /> 学び方で、結果は変わります。初心者でも学びやすい学習環境をご用意。</p>
+        </div>
+      </div> <!-- end row -->
 
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                          <a href="" title="Microsoft">
-                                            <%= image_tag('clients/microsoft_white.png', alt: 'clients') %>
-                                          </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                          <a href="" title="Google">
-                                            <%= image_tag('clients/google_white.png', alt: 'clients') %>
-                                          </a>
-                                        </li>
-                                    </ul>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="features-box">
+            <i class="mx-auto fa fa-ioxhost"></i>
+            <h5 class="text-center my-3">Responsive Layouts</h5>
+            <p class="text-muted m-b-0">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+          </div>
+        </div>
 
-                                    <a href="" class="btn btn-custom m-t-20">無料会員登録</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="col-md-4">
+          <div class="features-box">
+            <i class="fa fa-cubes"></i>
+            <h5 class="text-center my-3">Bootstrap UI based</h5>
+            <p class="text-muted m-b-0">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin litera..</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="features-box">
+            <i class="fa fa-umbrella"></i>
+            <h5 class="text-center my-3">Creative Design</h5>
+            <p class="text-muted m-b-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+          </div>
+        </div>
+
+      </div> <!-- end row -->
+
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="features-box">
+            <i class="fa fa-shirtsinbulk"></i>
+            <h5 class="text-center my-3">Strategy Solutions</h5>
+            <p class="text-muted m-b-0">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="features-box">
+            <i class="fa fa-free-code-camp"></i>
+            <h5 class="text-center my-3">Digital Design</h5>
+            <p class="text-muted m-b-0">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin litera..</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="features-box">
+            <i class="fa fa-language"></i>
+            <h5 class="text-center my-3">Analystics Solutions</h5>
+            <p class="text-muted m-b-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+          </div>
+        </div>
+
+      </div> <!-- end row -->
+
+    </div> <!-- end container -->
+  </section>
+  <!-- end Features -->
+
+
+  <!-- Features Alt -->
+  <section class="section bg-gray">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-6">
+          <%= image_tag('macbook.png', alt: 'img', class: 'img-fluid') %>
+        </div>
+        <div class="col-md-5 offset-md-1">
+          <div class="feat-description">
+            <h4>Praesent et viverra massa non varius magna eget nibh vitae velit posuere efficitur.</h4>
+            <p class="text-muted"><i>The clean and well commented code allows easy customization of the theme.It's designed for describing your app, agency or business.</i></p>
+
+            <p class="text-muted">We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.We put a lot of effort in design.</p>
+
+            <a href="" class="btn btn-custom">Learn More</a>
+          </div>
+        </div>
+
+      </div><!-- end row -->
+
+    </div> <!-- end container -->
+  </section>
+  <!-- end features alt -->
+
+  <!-- Testimonials section -->
+  <section class="section bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="owl-testi text-center">
+            <div class="item">
+              <div class="testimonial-box">
+                <h4>Excellent support for a tricky issue related to our customization of the template. Author kept us updated as he made progress on the issue and emailed us a patch when he was done.</h4>
+                <%= image_tag('team/team-1.jpg', alt: 'testimonials-user', class: 'esti-user rounded-circle') %>
+                <p>- Ubold User</p>
+              </div>
             </div>
-        </section>
-        <!-- END HOME -->
-
-        <!-- Features -->
-        <section class="section" id="features">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                    <p class="text-muted text-uppercase"><b>オンラインプログラミング学習サービス</b></p>
-                        <h3 class="title">『Progate』</h3>
-                        <p class="text-muted sub-title">Progateはオンラインでプログラミングが学べるサービスです。<br/> 学び方で、結果は変わります。初心者でも学びやすい学習環境をご用意。</p>
-                    </div>
-                </div> <!-- end row -->
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="features-box">
-                            <i class="mx-auto fa fa-ioxhost"></i>
-                            <h5 class="text-center my-3">Responsive Layouts</h5>
-                            <p class="text-muted m-b-0">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="features-box">
-                            <i class="fa fa-cubes"></i>
-                            <h5 class="text-center my-3">Bootstrap UI based</h5>
-                            <p class="text-muted m-b-0">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin litera..</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="features-box">
-                            <i class="fa fa-umbrella"></i>
-                            <h5 class="text-center my-3">Creative Design</h5>
-                            <p class="text-muted m-b-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-                        </div>
-                    </div>
-
-                </div> <!-- end row -->
-
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="features-box">
-                            <i class="fa fa-shirtsinbulk"></i>
-                            <h5 class="text-center my-3">Strategy Solutions</h5>
-                            <p class="text-muted m-b-0">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="features-box">
-                            <i class="fa fa-free-code-camp"></i>
-                            <h5 class="text-center my-3">Digital Design</h5>
-                            <p class="text-muted m-b-0">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin litera..</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="features-box">
-                            <i class="fa fa-language"></i>
-                            <h5 class="text-center my-3">Analystics Solutions</h5>
-                            <p class="text-muted m-b-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-                        </div>
-                    </div>
-
-                </div> <!-- end row -->
-
-            </div> <!-- end container -->
-        </section>
-        <!-- end Features -->
-
-
-        <!-- Features Alt -->
-        <section class="section bg-gray">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-md-6">
-                      <%= image_tag('macbook.png', alt: 'img', class: 'img-fluid') %>
-                    </div>
-                    <div class="col-md-5 offset-md-1">
-                        <div class="feat-description">
-                            <h4>Praesent et viverra massa non varius magna eget nibh vitae velit posuere efficitur.</h4>
-                            <p class="text-muted"><i>The clean and well commented code allows easy customization of the theme.It's designed for describing your app, agency or business.</i></p>
-
-                            <p class="text-muted">We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.We put a lot of effort in design.</p>
-
-                            <a href="" class="btn btn-custom">Learn More</a>
-                        </div>
-                    </div>
-
-                </div><!-- end row -->
-
-            </div> <!-- end container -->
-        </section>
-        <!-- end features alt -->
-
-        <!-- Testimonials section -->
-        <section class="section bg-dark">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 offset-md-2">
-                        <div class="owl-testi text-center">
-                            <div class="item">
-                                <div class="testimonial-box">
-                                    <h4>Excellent support for a tricky issue related to our customization of the template. Author kept us updated as he made progress on the issue and emailed us a patch when he was done.</h4>
-                                    <%= image_tag('team/team-1.jpg', alt: 'testimonials-user', class: 'esti-user rounded-circle') %>
-                                    <p>- Ubold User</p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="testimonial-box">
-                                    <h4>Flexible, Everything is in, Suuuuuper light, even for the code is much easier to cut and make it a theme for a productive app..</h4>
-                                    <%= image_tag('team/team-2.jpg', alt: 'testimonials-user', class: 'esti-user rounded-circle') %>                                    <p>- Ubold User</p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="testimonial-box">
-                                    <h4>Not only the code, design and support are awesome, but they also update it constantly the template with new content, new plugins. I will buy surely another coderthemes template!</h4>
-                                    <%= image_tag('team/team-3.jpg', alt: 'testimonials-user', class: 'esti-user rounded-circle') %>                                    <p>- Ubold User</p>
-                                    <p>- Ubold User</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row text-center">
-                    <div class="col-md-12">
-                        <ul class="list-inline">
-                            <li class="list-inline-item">
-                              <a href="" title="Microsoft">
-                                <%= image_tag('clients/microsoft.png', alt: 'clients') %>
-                              </a>
-                            </li>
-                            <li class="list-inline-item">
-                              <a href="" title="Google">
-                                <%= image_tag('clients/google.png', alt: 'clients') %>
-                              </a>
-                            </li>
-                            <li class="list-inline-item">
-                              <a href="" title="Instagram">
-                                <%= image_tag('clients/instagram.png', alt: 'clients') %>
-                              </a>
-                            </li>
-                            <li class="list-inline-item">
-                              <a href="" title="Converse">
-                                <%= image_tag('clients/converse.png', alt: 'clients') %>
-                              </a>
-                            </li>
-                        </ul>
-                    </div> <!-- end Col -->
-                </div><!-- end row -->
+            <div class="item">
+              <div class="testimonial-box">
+                <h4>Flexible, Everything is in, Suuuuuper light, even for the code is much easier to cut and make it a theme for a productive app..</h4>
+                <%= image_tag('team/team-2.jpg', alt: 'testimonials-user', class: 'esti-user rounded-circle') %> <p>- Ubold User</p>
+              </div>
             </div>
-        </section>
-        <!-- End Testimonials section -->
-
-
-        <!-- PRICING -->
-        <section class="section" id="pricing">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h3 class="title">Pricing</h3>
-                        <p class="text-muted sub-title">The clean and well commented code allows easy customization of the theme.It's <br> designed for describing your app, agency or business.</p>
-                    </div>
-                </div> <!-- end row -->
-
-
-                <div class="row">
-                    <div class="col-lg-10 offset-lg-1">
-                        <div class="row">
-
-                            <!--Pricing Column-->
-                            <article class="pricing-column col-lg-4 col-md-4">
-                                <div class="inner-box">
-                                    <div class="plan-header text-center">
-                                        <h3 class="plan-title">Ragular</h3>
-                                        <h2 class="plan-price">$24</h2>
-                                        <div class="plan-duration">Per License</div>
-                                    </div>
-                                    <ul class="plan-stats list-unstyled">
-                                        <li> <i class="fa fa-check-square-o"></i>Number of end products <b>1</b></li>
-                                        <li> <i class="fa fa-check-square-o"></i>Customer support</li>
-                                        <li> <i class="fa fa-check-square-o"></i>Free Updates</li>
-                                        <li> <i class="fa fa-check-square-o"></i>No Domain</li>
-                                        <li> <i class="fa fa-check-square-o"></i>24x7 Support</li>
-                                    </ul>
-
-                                    <div class="text-center">
-                                        <a href="#" class="btn btn-sm btn-custom">Purchase Now</a>
-                                    </div>
-                                </div>
-                            </article>
-
-
-                            <!--Pricing Column-->
-                            <article class="pricing-column col-lg-4 col-md-4">
-                                <div class="inner-box active">
-                                    <div class="plan-header text-center">
-                                        <h3 class="plan-title">Multiple</h3>
-                                        <h2 class="plan-price">$120</h2>
-                                        <div class="plan-duration">Per License</div>
-                                    </div>
-                                    <ul class="plan-stats list-unstyled">
-                                        <li> <i class="fa fa-check-square-o"></i>Number of end products <b>1</b></li>
-                                        <li> <i class="fa fa-check-square-o"></i>Customer support</li>
-                                        <li> <i class="fa fa-check-square-o"></i>Free Updates</li>
-                                        <li> <i class="fa fa-check-square-o"></i>5 Domains</li>
-                                        <li> <i class="fa fa-check-square-o"></i>24x7 Support</li>
-                                    </ul>
-
-                                    <div class="text-center">
-                                        <a href="#" class="btn btn-sm btn-custom">Purchase Now</a>
-                                    </div>
-                                </div>
-                            </article>
-
-
-                            <!--Pricing Column-->
-                            <article class="pricing-column col-lg-4 col-md-4">
-                                <div class="inner-box">
-                                    <div class="plan-header text-center">
-                                        <h3 class="plan-title">Extended</h3>
-                                        <h2 class="plan-price">$999</h2>
-                                        <div class="plan-duration">Per License</div>
-                                    </div>
-                                    <ul class="plan-stats list-unstyled">
-                                        <li> <i class="fa fa-check-square-o"></i>Number of end products <b>1</b></li>
-                                        <li> <i class="fa fa-check-square-o"></i>Customer support</li>
-                                        <li> <i class="fa fa-check-square-o"></i>Free Updates</li>
-                                        <li> <i class="fa fa-check-square-o"></i>Unlimited Domains</li>
-                                        <li> <i class="fa fa-check-square-o"></i>24x7 Support</li>
-                                    </ul>
-
-                                    <div class="text-center">
-                                        <a href="#" class="btn btn-sm btn-custom">Purchase Now</a>
-                                    </div>
-                                </div>
-                            </article>
-
-                        </div>
-                    </div><!-- end col -->
-                </div><!-- end row -->
-            </div> <!-- end container -->
-        </section>
-        <!-- End Pricing -->
-
-
-        <!-- Get Started -->
-        <section class="section bg-custom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="get-started text-center">
-                            <h2><b>Get Started for FREE</b></h2>
-                            <h4>The clean and well commented code allows easy customization of the theme.It's designed for describing your app, agency or business.</h4>
-                            <a href="" class="btn btn-white-bordered">Join for FREE</a>
-                        </div>
-                    </div>
-                </div><!-- end row -->
-            </div> <!-- end container -->
-        </section>
-        <!-- end Get Started -->
-
-
-        <!-- Clients -->
-        <section class="section" id="team">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h3 class="title">Behind People</h3>
-                        <p class="text-muted sub-title">The clean and well commented code allows easy customization of the theme.It's <br/> designed for describing your app, agency or business.</p>
-                    </div>
-                </div>
-                <!-- end row -->
-
-
-                <div class="row team text-center">
-                    <!-- team-member -->
-                    <div class="col-md-4">
-                        <div class="team-member">
-                            <%= image_tag('team/team-1.jpg', alt: 'team-member', class: 'img-responsive') %>
-                            <h4>Holden McGroin</h4>
-                            <p class="text-muted">Product Designer & Founder</p>
-                        </div>
-                    </div>
-
-                    <!-- team-member -->
-                    <div class="col-md-4">
-                        <div class="team-member">
-                            <%= image_tag('team/team-2.jpg', alt: 'team-member', class: 'img-responsive') %>
-                            <h4>Mike Oxbigg</h4>
-                            <p class="text-muted">Developer & Co-founder</p>
-                        </div>
-                    </div>
-
-                    <!-- team-member -->
-                    <div class="col-md-4">
-                        <div class="team-member">
-                            <%= image_tag('team/team-3.jpg', alt: 'team-member', class: 'img-responsive') %>
-                            <h4>Eilean Dover</h4>
-                            <p class="text-muted">UI/UX Designer</p>
-                        </div>
-                    </div>
-
-                </div>
-
+            <div class="item">
+              <div class="testimonial-box">
+                <h4>Not only the code, design and support are awesome, but they also update it constantly the template with new content, new plugins. I will buy surely another coderthemes template!</h4>
+                <%= image_tag('team/team-3.jpg', alt: 'testimonials-user', class: 'esti-user rounded-circle') %> <p>- Ubold User</p>
+                <p>- Ubold User</p>
+              </div>
             </div>
-        </section>
-        <!--End  Clients -->
+          </div>
+        </div>
+      </div>
 
-        <!-- FOOTER -->
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <a class="navbar-brand logo" href="index.html">
-                            Admin<span class="text-custom">to</span>
-                        </a>
-                        <span class="copy-txt">&copy; 2016 - 2019</span>
-                    </div>
-                    <div class="col-lg-5 offset-lg-1">
-                        <ul class="footer-menu list-inline">
-                            <li class="list-inline-item"><a href="#">How it works</a></li>
-                            <li class="list-inline-item"><a href="#">Features</a></li>
-                            <li class="list-inline-item"><a href="#">Pricing</a></li>
-                            <li class="list-inline-item"><a href="#">Team</a></li>
-                            <li class="list-inline-item"><a href="#">Login</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3">
-                        <ul class="social-icons text-right">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                </div> <!-- end row -->
-            </div> <!-- end container -->
-        </footer>
-        <!-- End Footer -->
+      <div class="row text-center">
+        <div class="col-md-12">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="" title="Microsoft">
+                <%= image_tag('clients/microsoft.png', alt: 'clients') %>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="" title="Google">
+                <%= image_tag('clients/google.png', alt: 'clients') %>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="" title="Instagram">
+                <%= image_tag('clients/instagram.png', alt: 'clients') %>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="" title="Converse">
+                <%= image_tag('clients/converse.png', alt: 'clients') %>
+              </a>
+            </li>
+          </ul>
+        </div> <!-- end Col -->
+      </div><!-- end row -->
+    </div>
+  </section>
+  <!-- End Testimonials section -->
 
-        <!-- js placed at the end of the document so the pages load faster -->
-<% provide(:js2, (javascript_include_tag 'js/jquery.min',
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h3 class="title">Pricing</h3>
+          <p class="text-muted sub-title">The clean and well commented code allows easy customization of the theme.It's <br> designed for describing your app, agency or business.</p>
+        </div>
+      </div> <!-- end row -->
+
+
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <div class="row">
+
+            <!--Pricing Column-->
+            <article class="pricing-column col-lg-4 col-md-4">
+              <div class="inner-box">
+                <div class="plan-header text-center">
+                  <h3 class="plan-title">Ragular</h3>
+                  <h2 class="plan-price">$24</h2>
+                  <div class="plan-duration">Per License</div>
+                </div>
+                <ul class="plan-stats list-unstyled">
+                  <li> <i class="fa fa-check-square-o"></i>Number of end products <b>1</b></li>
+                  <li> <i class="fa fa-check-square-o"></i>Customer support</li>
+                  <li> <i class="fa fa-check-square-o"></i>Free Updates</li>
+                  <li> <i class="fa fa-check-square-o"></i>No Domain</li>
+                  <li> <i class="fa fa-check-square-o"></i>24x7 Support</li>
+                </ul>
+
+                <div class="text-center">
+                  <a href="#" class="btn btn-sm btn-custom">Purchase Now</a>
+                </div>
+              </div>
+            </article>
+
+
+            <!--Pricing Column-->
+            <article class="pricing-column col-lg-4 col-md-4">
+              <div class="inner-box active">
+                <div class="plan-header text-center">
+                  <h3 class="plan-title">Multiple</h3>
+                  <h2 class="plan-price">$120</h2>
+                  <div class="plan-duration">Per License</div>
+                </div>
+                <ul class="plan-stats list-unstyled">
+                  <li> <i class="fa fa-check-square-o"></i>Number of end products <b>1</b></li>
+                  <li> <i class="fa fa-check-square-o"></i>Customer support</li>
+                  <li> <i class="fa fa-check-square-o"></i>Free Updates</li>
+                  <li> <i class="fa fa-check-square-o"></i>5 Domains</li>
+                  <li> <i class="fa fa-check-square-o"></i>24x7 Support</li>
+                </ul>
+
+                <div class="text-center">
+                  <a href="#" class="btn btn-sm btn-custom">Purchase Now</a>
+                </div>
+              </div>
+            </article>
+
+
+            <!--Pricing Column-->
+            <article class="pricing-column col-lg-4 col-md-4">
+              <div class="inner-box">
+                <div class="plan-header text-center">
+                  <h3 class="plan-title">Extended</h3>
+                  <h2 class="plan-price">$999</h2>
+                  <div class="plan-duration">Per License</div>
+                </div>
+                <ul class="plan-stats list-unstyled">
+                  <li> <i class="fa fa-check-square-o"></i>Number of end products <b>1</b></li>
+                  <li> <i class="fa fa-check-square-o"></i>Customer support</li>
+                  <li> <i class="fa fa-check-square-o"></i>Free Updates</li>
+                  <li> <i class="fa fa-check-square-o"></i>Unlimited Domains</li>
+                  <li> <i class="fa fa-check-square-o"></i>24x7 Support</li>
+                </ul>
+
+                <div class="text-center">
+                  <a href="#" class="btn btn-sm btn-custom">Purchase Now</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div><!-- end col -->
+      </div><!-- end row -->
+    </div> <!-- end container -->
+  </section>
+  <!-- End Pricing -->
+
+
+  <!-- Get Started -->
+  <section class="section bg-custom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="get-started text-center">
+            <h2><b>Get Started for FREE</b></h2>
+            <h4>The clean and well commented code allows easy customization of the theme.It's designed for describing your app, agency or business.</h4>
+            <a href="" class="btn btn-white-bordered">Join for FREE</a>
+          </div>
+        </div>
+      </div><!-- end row -->
+    </div> <!-- end container -->
+  </section>
+  <!-- end Get Started -->
+
+
+  <!-- Clients -->
+  <section class="section" id="team">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h3 class="title">Behind People</h3>
+          <p class="text-muted sub-title">The clean and well commented code allows easy customization of the theme.It's <br /> designed for describing your app, agency or business.</p>
+        </div>
+      </div>
+      <!-- end row -->
+
+
+      <div class="row team text-center">
+        <!-- team-member -->
+        <div class="col-md-4">
+          <div class="team-member">
+            <%= image_tag('team/team-1.jpg', alt: 'team-member', class: 'img-responsive') %>
+            <h4>Holden McGroin</h4>
+            <p class="text-muted">Product Designer & Founder</p>
+          </div>
+        </div>
+
+        <!-- team-member -->
+        <div class="col-md-4">
+          <div class="team-member">
+            <%= image_tag('team/team-2.jpg', alt: 'team-member', class: 'img-responsive') %>
+            <h4>Mike Oxbigg</h4>
+            <p class="text-muted">Developer & Co-founder</p>
+          </div>
+        </div>
+
+        <!-- team-member -->
+        <div class="col-md-4">
+          <div class="team-member">
+            <%= image_tag('team/team-3.jpg', alt: 'team-member', class: 'img-responsive') %>
+            <h4>Eilean Dover</h4>
+            <p class="text-muted">UI/UX Designer</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!--End  Clients -->
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <a class="navbar-brand logo" href="index.html">
+            Admin<span class="text-custom">to</span>
+          </a>
+          <span class="copy-txt">&copy; 2016 - 2019</span>
+        </div>
+        <div class="col-lg-5 offset-lg-1">
+          <ul class="footer-menu list-inline">
+            <li class="list-inline-item"><a href="#">How it works</a></li>
+            <li class="list-inline-item"><a href="#">Features</a></li>
+            <li class="list-inline-item"><a href="#">Pricing</a></li>
+            <li class="list-inline-item"><a href="#">Team</a></li>
+            <li class="list-inline-item"><a href="#">Login</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <ul class="social-icons text-right">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          </ul>
+        </div>
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+  </footer>
+  <!-- End Footer -->
+
+  <!-- js placed at the end of the document so the pages load faster -->
+  <% provide(:js2, (javascript_include_tag 'js/jquery.min',
                                          'js/popper.min',
                                          'js/bootstrap.min',
                                          'js/scrollspy.min',

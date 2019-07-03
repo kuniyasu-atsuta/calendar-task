@@ -2,6 +2,8 @@
 
 Rails.application.routes.draw do
   root 'pages#landing'
+  get 'calendar', to: 'pages#calendar'
+  get 'profile/:id', to: 'extras#profile'
   get 'password_resets/new'
   get 'password_resets/edit'
   resources :password_resets, only: %i[new create edit update]
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
 
   # get 'users/index/:id', to: 'users#index'
   get '/ranking/:id', to: 'users#ranking'
+  get '/users/edit', to: 'users#edit'
   resources :users, except: [:index]
 
   get '/lessons/:id', to: 'lessons#index'

@@ -6,80 +6,76 @@
 <!-- Begin page -->
 <div id="wrapper">
 
-    <%= render 'layouts/top_bar', locals: {title: "ランキング"} %>
-    <%= render 'layouts/left_sidebar' %>
-    <!-- ============================================================== -->
-    <!-- Start right Content here -->
-    <!-- ============================================================== -->
-    <div class="content-page">
-        <!-- Start content -->
+  <%= render 'layouts/top_bar', locals: {title: "ランキング"} %>
+  <%= render 'layouts/left_sidebar' %>
+  <!-- ============================================================== -->
+  <!-- Start right Content here -->
+  <!-- ============================================================== -->
+  <div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+      <div class="container-fluid">
         <%= paginate @users %>
-        <div class="content">
-            <div class="container-fluid">
-              <%= paginate @users %>
-                <div class="row">
-                    <div class="col-xl-8 mx-auto">
-                        <div class="card-box">
-                            <div class="dropdown pull-right">
-                                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                                    <i class="mdi mdi-dots-vertical"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                                </div>
-                            </div>
+        <div class="row">
+          <div class="col-xl-8 mx-auto">
+            <div class="card-box">
+              <div class="dropdown pull-right">
+                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+                  <i class="mdi mdi-dots-vertical"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <!-- item-->
+                  <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                  <!-- item-->
+                  <a href="javascript:void(0);" class="dropdown-item">Another action</a>
+                  <!-- item-->
+                  <a href="javascript:void(0);" class="dropdown-item">Something else</a>
+                  <!-- item-->
+                  <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
+                </div>
+              </div>
 
-                			<h4 class="header-title mt-0 m-b-30">Latest Projects</h4>
-                            <div class="table-responsive">
-                                <table class="table mb-0">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Project Name</th>
-                                        <th>Start Date</th>
-                                        <th>Due Date</th>
-                                        <th>Status</th>
-                                        <th>Assign</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                      <% @users.each do |user| %>
-                                        <tr>
-                                            <td>1</td>
-                                            <td><%= user.name %></td>
-                                            <td><%= user.created_at %></td>
-                                            <td><%= user.updated_at %></td>
-                                            <td><span class="badge badge-danger">Released</span></td>
-                                            <td>Coderthemes</td>
-                                        </tr>
-                                      <% end %>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div><!-- end col -->
-                </div><!-- end row -->
-
-                <!-- end row -->
-              <%= paginate @users %>
-            </div> <!-- container -->
-        </div> <!-- content -->
-        <%= render 'layouts/footer' %>
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Right content here -->
-    <!-- ============================================================== -->
-    <%= render 'layouts/right_bar' %>
+              <h4 class="header-title mt-0 m-b-30">Latest Projects</h4>
+              <div class="table-responsive">
+                <table class="table mb-0">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Project Name</th>
+                      <th>Start Date</th>
+                      <th>Due Date</th>
+                      <th>Status</th>
+                      <th>Assign</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @users.each do |user| %>
+                      <tr>
+                        <td>1</td>
+                        <td><%= user.name %></td>
+                        <td><%= user.created_at %></td>
+                        <td><%= user.updated_at %></td>
+                        <td><span class="badge badge-danger">Released</span></td>
+                        <td>Coderthemes</td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div><!-- end col -->
+        </div><!-- end row -->
+        <%= paginate @users %>
+      </div> <!-- container -->
+    </div> <!-- content -->
+    <%= render 'layouts/footer' %>
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Right content here -->
+  <!-- ============================================================== -->
+  <%= render 'layouts/right_bar' %>
 </div>
 <!-- END wrapper -->
-
 <% provide(:js2, (javascript_include_tag 'jquery.min',
                                          'popper.min',
                                          'bootstrap.min',

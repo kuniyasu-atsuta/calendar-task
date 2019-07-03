@@ -1,120 +1,117 @@
 <!-- ========== Left Sidebar Start ========== -->
 <div class="left side-menu">
-    <div class="sidebar-inner slimscrollleft">
+  <div class="sidebar-inner slimscrollleft">
 
-        <!-- User -->
-        <div class="user-box">
-            <div class="user-img dropdown notification-list">
-              <a class="dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
-                 aria-haspopup="false" aria-expanded="false">
-                <%= image_tag('users/avatar-1.jpg', alt: "user-img", title: "Mat Helme", class: 'rounded-circle img-thumbnail img-responsive') %>
-                <!-- <img src="assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme" class="rounded-circle img-thumbnail img-responsive"> -->
-              </a>
-              <% if logged_in? %>
-              <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                  <!-- item-->
-                  <%= link_to(content_tag(:i, ' プロフィール', class: 'ti-lock m-r-5'),
+    <!-- User -->
+    <div class="user-box">
+      <div class="user-img dropdown notification-list">
+        <a class="dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+          <%= image_tag('users/avatar-1.jpg', alt: "user-img", title: "Mat Helme", class: 'rounded-circle img-thumbnail img-responsive') %>
+          <!-- <img src="assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme" class="rounded-circle img-thumbnail img-responsive"> -->
+        </a>
+        <% if logged_in? %>
+        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+          <!-- item-->
+          <%= link_to(content_tag(:i, ' プロフィール', class: 'ti-lock m-r-5'),
                                           "/profile/#{@user.id}",
                                           class: "dropdown-item notify-item") %>
-                  <!-- item-->
+          <!-- item-->
 
-                  <%= link_to(content_tag(:i, ' アカウント設定', class: 'ti-settings m-r-5'),
+          <%= link_to(content_tag(:i, ' アカウント設定', class: 'ti-settings m-r-5'),
                                           edit_user_path(current_user),
                                           class: "dropdown-item notify-item") %>
-                  <!-- item-->
-                  <a href="javascript:void(0);" class="dropdown-item notify-item">
-                      <i class="ti-lock m-r-5"></i> Lock screen
-                  </a>
-                  <!-- item-->
-                  <%= link_to(content_tag(:i, ' ログアウト', class: 'ti-lock m-r-5'),
+          <!-- item-->
+          <a href="javascript:void(0);" class="dropdown-item notify-item">
+            <i class="ti-lock m-r-5"></i> Lock screen
+          </a>
+          <!-- item-->
+          <%= link_to(content_tag(:i, ' ログアウト', class: 'ti-lock m-r-5'),
                                           logout_path, method: :delete,
                                           class: "dropdown-item notify-item") %>
 
-              </div>
-              <% end %>
-                <div class="user-status offline"><i class="mdi mdi-adjust"></i></div>
-            </div>
-            <h5><a href="#">Mat Helme</a> </h5>
-            <ul class="list-inline">
-                <li class="list-inline-item">
-                    <a href="#" >
-                        <i class="mdi mdi-settings"></i>
-                    </a>
-                </li>
-
-                <li class="list-inline-item">
-                    <a href="#" class="text-custom">
-                        <i class="mdi mdi-power"></i>
-                    </a>
-                </li>
-            </ul>
         </div>
-        <!-- End User -->
+        <% end %>
+        <div class="user-status offline"><i class="mdi mdi-adjust"></i></div>
+      </div>
+      <h5><a href="#">Mat Helme</a> </h5>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="#">
+            <i class="mdi mdi-settings"></i>
+          </a>
+        </li>
 
-        <!--- Sidemenu -->
-        <div id="sidebar-menu">
-            <ul>
-              <li class="text-muted menu-title">Navigation</li>
-
-                <li>
-                  <%= link_to user_path(@user), class: "dropdown-item notify-item" do %>
-                    <i class="mdi mdi-view-dashboard"></i>
-                    <span> ダッシュボード </span>
-                  <% end %>
-                </li>
-
-                <li>
-                  <%= link_to "/lessons/#{@user.id}", class: "dropdown-item notify-item" do %>
-                    <i class="mdi mdi-calendar"></i>
-                    <span> レッスン </span>
-                  <% end %>
-                </li>
-
-                <li>
-                  <%= link_to "/ranking/#{@user.id}", class: "dropdown-item notify-item" do %>
-                    <i class="mdi mdi-calendar"></i>
-                    <span> ランキング </span>
-                  <% end %>
-                </li>
-
-                <li>
-                  <%= link_to '/help', class: "dropdown-item notify-item" do %>
-                    <i class="mdi mdi-calendar"></i>
-                    <span> ヘルプ </span>
-                  <% end %>
-                </li>
-
-                <li>
-                  <%= link_to "/calendar/#{@user.id}", class: "dropdown-item notify-item" do %>
-                    <i class="mdi mdi-calendar"></i>
-                    <span class="badge badge-purple pull-right">New</span>
-                    <span> カレンダー </span>
-                  <% end %>
-                </li>
-
-                <li>
-                  <%= link_to "/calendar/#{@user.id}", class: "dropdown-item notify-item" do %>
-                    <i class="mdi mdi-calendar"></i>
-                    <span class="badge badge-purple pull-right">New</span>
-                    <span> 友達を探す </span>
-                  <% end %>
-                </li>
-              <% if logged_in? %>
-                <li>
-                  <%= link_to logout_path, method: :delete do %>
-                    <i class="mdi mdi-calendar"></i>
-                    <span class="badge badge-purple pull-right">New</span>
-                    <span> ログアウト </span>
-                  <% end %>
-                </li>
-              <% end %>
-
-
-            </ul>
-            <div class="clearfix"></div>
-        </div>
-        <!-- Sidebar -->
-        <div class="clearfix"></div>
+        <li class="list-inline-item">
+          <a href="#" class="text-custom">
+            <i class="mdi mdi-power"></i>
+          </a>
+        </li>
+      </ul>
     </div>
+    <!-- End User -->
+
+    <!--- Sidemenu -->
+    <div id="sidebar-menu">
+      <ul>
+        <li class="text-muted menu-title">Navigation</li>
+
+        <li>
+          <%= link_to user_path(@user), class: "dropdown-item notify-item" do %>
+          <i class="mdi mdi-view-dashboard"></i>
+          <span> ダッシュボード </span>
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to "/lessons/#{@user.id}", class: "dropdown-item notify-item" do %>
+          <i class="mdi mdi-calendar"></i>
+          <span> レッスン </span>
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to "/ranking/#{@user.id}", class: "dropdown-item notify-item" do %>
+          <i class="mdi mdi-calendar"></i>
+          <span> ランキング </span>
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to '/help', class: "dropdown-item notify-item" do %>
+          <i class="mdi mdi-calendar"></i>
+          <span> ヘルプ </span>
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to "/calendar", class: "dropdown-item notify-item" do %>
+          <i class="mdi mdi-calendar"></i>
+          <span class="badge badge-purple pull-right">New</span>
+          <span> カレンダー </span>
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to "/calendar/#{@user.id}", class: "dropdown-item notify-item" do %>
+          <i class="mdi mdi-calendar"></i>
+          <span class="badge badge-purple pull-right">New</span>
+          <span> 友達を探す </span>
+          <% end %>
+        </li>
+        <% if logged_in? %>
+          <li>
+            <%= link_to logout_path, method: :delete do %>
+              <i class="mdi mdi-calendar"></i>
+              <span class="badge badge-purple pull-right">New</span>
+              <span> ログアウト </span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <!-- Sidebar -->
+    <div class="clearfix"></div>
+  </div>
 </div>
 <!-- Left Sidebar End -->
