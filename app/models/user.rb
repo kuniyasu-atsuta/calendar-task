@@ -10,6 +10,7 @@
 #  activation_digest :string(255)
 #  admin             :boolean          default(FALSE)
 #  email             :string(255)
+#  exp               :integer          default(0)
 #  name              :string(255)
 #  password_digest   :string(255)
 #  remember_digest   :string(255)
@@ -36,7 +37,8 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, length: {minimum: 6}, on: :create, presence: true
+  validates :password, length: {minimum: 6}, on: :update, allow_blank: true
 
   # 文字列のハッシュ化
   def self.digest(string)
