@@ -35,7 +35,7 @@
                 </div>
               </div>
 
-              <h4 class="header-title mt-0 m-b-30">Total Revenue</h4>
+              <h4 class="header-title mt-0 m-b-30">終了したレッスン</h4>
 
               <div class="widget-chart-1">
                 <div class="widget-chart-box-1">
@@ -43,7 +43,10 @@
                 </div>
 
                 <div class="widget-detail-1">
-                  <h2 class="p-t-10 mb-0"> 256 </h2>
+                  <a href="<%= lessons_user_path(@user) %>">
+                  <strong id="lessons" class="stat">
+                    <h2 class="p-t-10 mb-0"><%= @user.lessons.count %></h2>
+                  </strong>
                   <p class="text-muted m-b-10">Revenue today</p>
                 </div>
               </div>

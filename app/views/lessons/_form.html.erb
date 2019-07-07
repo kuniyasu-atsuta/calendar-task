@@ -1,0 +1,4 @@
+<%= form_for(current_user.successes.build) do |f| %>
+    <div><%= hidden_field_tag :lesson_id, @lesson.id %></div>
+    <%= f.submit "確認して次へ", class: "btn btn-primary btn-rounded w-md" %>
+<% end %>

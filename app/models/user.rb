@@ -24,6 +24,8 @@
 #
 
 class User < ApplicationRecord
+  has_many :successes, dependent: :destroy, foreign_key: "user_id"
+  has_many :lessons, through: :successes, source: :lesson
   attr_accessor :remember_token, :activation_token, :reset_token
 
   before_save :downcase_email
@@ -86,6 +88,20 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < 2
+  end
+
+  def check(lesson)
+    if self.successes.find_by(lesson_id: lesson.id) == nil
+      lessons << lesson
+    end
+  end
+
+  def remove_check(lesson)
+    Success.find_by(lesson_id: lesson.id).destroy
+  end
+
+  def success?(lesson)
+    lessons.include?(lesson)
   end
 
   private

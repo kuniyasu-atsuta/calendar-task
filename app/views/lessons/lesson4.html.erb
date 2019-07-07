@@ -1,4 +1,4 @@
-<% provide(:title, "piano") %>
+<% provide(:title, "Lesson#{@lesson.id}") %>
 <% provide(:css, (stylesheet_link_tag 'bootstrap.min',
                                       'piano',
                                       'keys',
@@ -19,7 +19,7 @@
 
  <div id="wrapper">
 
-   <%= render 'layouts/top_bar', locals: {title: "piano"} %>
+   <%= render 'layouts/top_bar', locals: {title: "Lesson#{@lesson.id}"} %>
    <%= render 'layouts/left_sidebar' %>
      <div class="content-page bg-light">
          <!-- Start content -->
@@ -28,18 +28,17 @@
          <div class="container-fluid col-sm-4 col-md-4 col-xl-3 mt-5 shadow px-0 h-50 pb-0">
            <div class="bg-custom pl-0">
               <div class="ml-3 h-100">
-                <p class="">lesson4: </p>
+                <p><%= @lesson.title %></p>
               </div>
            </div>
            <div class="ml-2 example">
-             <p class="ml-2 mr-2 mt-4" style="line-height: 30px;">本文</p>
+             <p class="ml-2 mr-2 mt-4" style="line-height: 30px;"><%= @lesson.description1 %></p>
            </div>
          </div>
          <div class="container-fluid col-sm-8 col-md-8 col-xl-9 mt-5">
            <div class="mt-2 mb-5">
-             <p>まず考えられるのが当たり前ですが、 バンドメンバーとのやり取りや、編曲家とのやり取りなど、歌メロをアカペラ音源としてやり取りする場面は必ず出てきます。その時に活躍してくれるのが様々な録音アプリです。 </p>
+             <p><%= @lesson.description2 %></p>
            </div>
-
           <%= render 'piano' %>
           <%= render 'keys', locals: "lesson5" %>
         </div>

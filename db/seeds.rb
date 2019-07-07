@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# user
 User.create!(name:  "atsuta",
              email: "jyoljyo05@gmail.com",
              password:              "password",
@@ -16,7 +17,7 @@ User.create!(name:  "atsuta",
 
 20.times do |n|
   name  = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
+  email = "example-#{n+1}@jmail.com"
   password = "password"
   User.create!(name:  name,
                email: email,
@@ -25,3 +26,18 @@ User.create!(name:  "atsuta",
                activated: true,
                activated_at: Time.zone.now)
 end
+
+# lesson
+20.times do |n|
+  title  = "title#{n+1}"
+  description1 = "description1"
+  description2 = "description2"
+  Lesson.create!(title: title,
+                 description1: description1,
+                 description2: description2)
+end
+
+# success
+lessons = Lesson.all
+user = User.first
+lessons.each { |lesson| user.check(lesson) }

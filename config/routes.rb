@@ -18,17 +18,18 @@ Rails.application.routes.draw do
   # get 'users/index/:id', to: 'users#index'
   get '/ranking/:id', to: 'users#ranking'
   get '/users/edit', to: 'users#edit'
-  resources :users, except: [:index]
+  resources :users, except: [:index] do
+    member do
+      get :lessons
+    end
+  end
 
   get '/lessons/:id', to: 'lessons#index'
-  get '/lessons/:id/1', to: 'lessons#lesson1'
-  get '/lessons/:id/2', to: 'lessons#lesson2'
-  get '/lessons/:id/3', to: 'lessons#lesson3'
-  get '/lessons/:id/4', to: 'lessons#lesson4'
-  get '/lessons/:id/5', to: 'lessons#lesson5'
-  get '/lessons/:id/6', to: 'lessons#lesson6'
-  get '/lessons/:id/7', to: 'lessons#lesson7'
+for i in (1..20)
+  get "/lessons/:id/#{i}", to: "lessons#lesson#{i}"
+end
   resources :lessons
   resources :account_activations, only: [:edit]
+  resources :successes, only: %i[create destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
